@@ -1,0 +1,15 @@
+name: Call recipient 2
+on:
+  workflow_call:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout from the repo this action lives in
+        uses: actions/checkout@v2
+        with:
+          repository: makar2/for-poc-github-actions
+
+      - name: ">>> Confirm correct status"
+        run: cat state.txt
